@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 
 
@@ -8,6 +9,10 @@ namespace FictionDataLayer.Entity
     {
         public List<Medal> Medals { get; set; }
         public List<Fanfic> Fanfics { get; set; }
+
+        public Boolean IsBlocked { get; set; }
+
+        public UserRole Role {get;set;}
 
         public Author()
         {
