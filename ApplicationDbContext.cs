@@ -13,13 +13,8 @@ namespace FictionDataLayer
         public DbSet<Rating> Ratings { get; set; }
         public DbSet<Chapter> Chapters { get; set; }
         public DbSet<Genre> Genres { get; set; }
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-            : base(options)
-        {
-            // Database.EnsureDeleted();
-            // Database.EnsureCreated();
-        }
-       
+                
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -34,7 +29,12 @@ namespace FictionDataLayer
                 .WithMany(s => s.FanficTags)
                 .HasForeignKey(sc => sc.TagId);
         }
-        
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=helloappdb;Trusted_Connection=True;");
+        }
+
     }
     
 }
