@@ -1,4 +1,4 @@
-﻿using DataLayer.Entity;
+﻿using FictionDataLayer.Entity;
 
 namespace FictionDataLayer.Entity
 {

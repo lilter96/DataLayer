@@ -1,6 +1,4 @@
-﻿
-
-using FictionDataLayer.Entity;
+﻿using FictionDataLayer.Entity;
 using Microsoft.EntityFrameworkCore;
 
 namespace FictionDataLayer
@@ -18,10 +16,10 @@ namespace FictionDataLayer
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
-            //Database.EnsureDeleted();
-            //Database.EnsureCreated();
+            // Database.EnsureDeleted();
+            // Database.EnsureCreated();
         }
-
+       
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -36,5 +34,7 @@ namespace FictionDataLayer
                 .WithMany(s => s.FanficTags)
                 .HasForeignKey(sc => sc.TagId);
         }
+        
     }
+    
 }

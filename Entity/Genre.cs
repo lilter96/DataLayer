@@ -1,5 +1,4 @@
-﻿using DataLayer.Entity;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace FictionDataLayer.Entity
 {
