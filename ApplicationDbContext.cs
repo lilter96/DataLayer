@@ -13,7 +13,12 @@ namespace FictionDataLayer
         public DbSet<Rating> Ratings { get; set; }
         public DbSet<Chapter> Chapters { get; set; }
         public DbSet<Genre> Genres { get; set; }
-                
+
+        public ApplicationDbContext()
+        {
+            Database.EnsureDeleted();
+            Database.EnsureCreated();
+        }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -36,5 +41,5 @@ namespace FictionDataLayer
         }
 
     }
-    
+
 }
